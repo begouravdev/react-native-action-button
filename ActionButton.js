@@ -158,8 +158,8 @@ const ActionButton = props => {
     );
   };
 
-  _renderButtonIcon = () => {
-    const { icon, renderIcon, btnOutRangeTxt, buttonTextStyle, buttonText } = this.props;
+  const _renderButtonIcon = () => {
+    const { icon, renderIcon, btnOutRangeTxt, buttonTextStyle, buttonText } = props;
     if (renderIcon) return renderIcon(this.state.active);
     if (icon) {
       console.warn('react-native-action-button: The `icon` prop is deprecated! Use `renderIcon` instead.');
