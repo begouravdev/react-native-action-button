@@ -157,7 +157,8 @@ const ActionButton = props => {
       </View>
     );
   };
-  _renderButtonIcon() {
+
+  _renderButtonIcon = () => {
     const { icon, renderIcon, btnOutRangeTxt, buttonTextStyle, buttonText } = this.props;
     if (renderIcon) return renderIcon(this.state.active);
     if (icon) {
