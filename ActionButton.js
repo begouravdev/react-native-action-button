@@ -157,42 +157,32 @@ const ActionButton = props => {
       </View>
     );
   };
-
-  const _renderButtonIcon = () => {
-    const {
-      icon,
-      renderIcon,
-      btnOutRangeTxt,
-      buttonTextStyle,
-      buttonText
-    } = props;
-    if (renderIcon) return renderIcon(active);
+  _renderButtonIcon() {
+    const { icon, renderIcon, btnOutRangeTxt, buttonTextStyle, buttonText } = this.props;
+    if (renderIcon) return renderIcon(this.state.active);
     if (icon) {
-      console.warn(
-        "react-native-action-button: The `icon` prop is deprecated! Use `renderIcon` instead."
-      );
+      console.warn('react-native-action-button: The `icon` prop is deprecated! Use `renderIcon` instead.');
       return icon;
     }
 
     const textColor = buttonTextStyle.color || "rgba(255,255,255,1)";
 
     return (
-      <Animated.Text
+      <Animated.View
         style={[
-          styles.btnText,
           buttonTextStyle,
           {
-            color: anim.current.interpolate({
+            color: this.anim.interpolate({
               inputRange: [0, 1],
               outputRange: [textColor, btnOutRangeTxt || textColor]
             })
           }
         ]}
       >
-        {buttonText}
-      </Animated.Text>
+        <View>{buttonText}</View>
+      </Animated.View>
     );
-  };
+  }
 
   const _renderActions = () => {
     const { children, verticalOrientation } = props;
