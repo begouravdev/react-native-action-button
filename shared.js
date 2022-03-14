@@ -23,7 +23,7 @@ export const alignItemsMap = {
   right: "flex-end"
 };
 
-export const isAndroid = Platform.OS === "android";
+export const isAndroid = false;
 
 export function getTouchableComponent(useNativeFeedback) {
   if (useNativeFeedback === true && isAndroid === true) {
