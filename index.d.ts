@@ -43,12 +43,10 @@ export interface ActionButtonProperties extends ViewProperties {
 export interface ActionButtonItemProperties extends ViewProperties {
   size?: number,
   title?: string
-  subTitle?: string
   onPress?:	() => void
   buttonColor?:	string
   textContainerStyle?: ViewStyle
   textStyle?: TextStyle
-  subTitleStyle?: TextStyle
   spaceBetween?: number
   activeOpacity?:	number
   hideLabelShadow?:	boolean
